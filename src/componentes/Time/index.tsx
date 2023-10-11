@@ -38,6 +38,7 @@ export default function Time({ corPrimaria, corSecundaria, nome, colaboradores }
                         key={colaborador.nome} nome={colaborador.nome} 
                         cargo={colaborador.cargo} 
                         imagem={colaborador.imagem} 
+                        data={colaborador.data} 
                     />
                 )}
             </TimeColaboradores>

@@ -40,9 +40,10 @@ interface ColaboradorProps {
     imagem: string
     cargo: string
     corDeFundo: string
+    data: string
 }
 
-export default function Colaborador ({ nome, imagem, cargo, corDeFundo } :ColaboradorProps) {
+export default function Colaborador ({ nome, imagem, cargo, corDeFundo, data } :ColaboradorProps) {
     return (<ColaboradorDiv>
         <ColaboradorCabecalho style={{ backgroundColor: corDeFundo }}>
             <ColaboradorIMG 
@@ -53,6 +54,8 @@ export default function Colaborador ({ nome, imagem, cargo, corDeFundo } :Colabo
         <ColaboradorRodape>
             <RodapeH4>{nome}</RodapeH4>
             <RodapeH5>{cargo}</RodapeH5>
+            <RodapeH5>{new Date(data).toLocaleDateString()}</RodapeH5>  
+            {/* data de acordo com o idiota do navegador */}
         </ColaboradorRodape>
     </ColaboradorDiv>)
 }

@@ -23,11 +23,12 @@ interface FormularioProps {
     times: string[]
 }
 
-export default function Formulario(props :FormularioProps) {
+export default function Formulario(props: FormularioProps) {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
+    const [data, setData] = useState('')
     const [time, setTime] = useState('')
 
     const aoSalvar = (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,11 +37,13 @@ export default function Formulario(props :FormularioProps) {
             nome,
             cargo,
             imagem,
+            data,
             time
         })
         setNome('')
         setCargo('')
         setImagem('')
+        setData('')
         setTime('')
     }
 
@@ -67,6 +70,13 @@ export default function Formulario(props :FormularioProps) {
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
+                />
+                <CampoTexto 
+                    label="Data de entrada ao time"
+                    tipo="date"
+                    placeholder=''
+                    valor={data}
+                    aoAlterado={setData}
                 />
                 <ListaSuspensa
                     obrigatorio={true}
